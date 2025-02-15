@@ -1,9 +1,46 @@
+log=console.log.bind(window.console);
+gebi=function(id){return document.getElementById(id);}
+
 var svg={
-model:{id:'svg',data:[]},
+coba:function(){alert('svg')},
+json:{id:'svg',data:[
+{canvas:'0 0 100 150', item:[
+{nama:'person',posisi:'0 20'},
+{nama:'person',posisi:'0 50'},
+{nama:'ellipse',posisi:'50 0'},
+{nama:'ellipse',posisi:'50 55'},
+{nama:'ellipse',posisi:'50 100'},
+{nama:'line',posisi:'M24 36 48 12'},
+{nama:'line',posisi:'M24 36 48 114'},
+{nama:'line',posisi:'M24 66 48 66'},
+{nama:'line',posisi:'M24 66 48 114'},
+{nama:'text',posisi:'75 14',text:'purchas'},
+{nama:'text',posisi:'75 70',text:'sale'},
+{nama:'text',posisi:'75 114',text:'login'},
+]},
+{canvas:'0 0 100 200', item:[
+{nama:'terminal',posisi:'20 0'},
+{nama:'process',posisi:'20 30'},
+{nama:'decision',posisi:'20 60'},
+{nama:'process',posisi:'20 90'},
+{nama:'process',posisi:'20 120'},
+{nama:'terminal',posisi:'20 150'},
+{nama:'line',posisi:'M32 20 32 30'},
+{nama:'line',posisi:'M32 50 32 54'},
+{nama:'line',posisi:'M32 85 32 90'},
+{nama:'line',posisi:'M32 110 32 120'},
+{nama:'line',posisi:'M32 140 32 145 0 145 0 72 10 72'},
+{nama:'line',posisi:'M52 72 56 72 56 148 32 148 32 150 '},
+{nama:'text',posisi:'25 14',text:'start'},
+{nama:'text',posisi:'25 164',text:'end'},
+]},
+
+]},
+
 path:{
 gradien:`<defs>
 <linearGradient id="gradient" x1="50%" y1="-2.48949813e-15%" x2="50%" y2="100%" >
-<stop stop-color="red" offset="0%"/>
+<stop stop-color="#5757D9" offset="0%"/>
 <stop stop-color="#21D9F7" offset="100%"/>
 </linearGradient>
 </defs>`,
@@ -25,17 +62,11 @@ cart:`M4 5 2 5 2 2 5 2 8 7 22 6 19 18 11 18ZM9 21A1 1 0 0013 21 1 1 0 009 21M16 
 card:`M5 16H7M2 9H22M2 5H22V19H2Z`,
 envelope:`M2 8C2 7 3 6 4 6L20 6C21 6 22 7 22 8L22 20C22 21 21 22 20 22L4 22C3 22 2 21 2 20ZM22 8 12 15 2 8`,
 geo:`M4 10A1 1 0 0120 10C20 17 12 22 12 22 12 22 4 17 4 10M9 10A1 1 0 0015 10 1 1 0 009 10`,
-
 twitter:`M23 3A11 11 0 0120 4 4 4 0 0012 7V8A10 10 0 013 4S1 14 8 17A12 12 0 011 19C10 24 21 19 21 8A4.5 4.5 0 0021 7 8 8 0 0023 3Z`,
 facebook:`M17 2H14A5 5 0 009 7V10H6V14H9V22H13V14H16L17 10H13V7A1 1 0 0114 6H17Z`,
 whatsapp:`M20 11A8 8 0 018 18L3 21 5 15A8 8 0 014 11 1 1 0 0120 11Z`,
 instagram:`M5 2 19 2C21 2 22 3 22 5L22 19C22 21 21 22 19 22L5 22C3 22 2 21 2 19L2 5C2 3 3 2 5 2ZM7 12C7 19 17 19 17 12 17 5 7 5 7 12M20 6C20 4 17 4 17 6 17 8 20 8 20 6`,
-linkedin:`M4 2A1 1 0 004 6 1 1 0 004 2M2 8 2 22 6 22 6 8 2 8M8 8 8 22 12 22 12 15C12 12 18 12 18 15L18 22 22 22 22 13C21 7 14 7 12 10L12 8 8 8`,
-github:`M9 22 9 18C5 18 6 16 3 14 6 12 6 18 9 16 9 15 9 15 10 14 7 13 7 10 8 9 7 8 7 8 7 7 8 7 8 7 9 7 11 6 13 6 15 7 15 7 15 7 17 7 17 8 17 8 16 9 17 10 17 13 14 14 15 15 15 15 15 22 28 15 21 2 12 2 3 2-4 15 9 22`,
-arduino:`M12 10C18 3 22 8 22 12 22 16 18 21 12 14 6 21 2 16 2 12 2 8 6 3 12 10M10 12C2 3 2 21 10 12M14 12C22 21 22 3 14 12Z`,
 
-
-edu:`M2 8 12 2 22 8 12 14 2 8M6 11 12 15 18 11 18 16C14 19 10 19 6 16Z`,
 eye:`M1 12S5 4 12 4S23 12 23 12S19 20 12 20S1 12 1 12ZM9 12A3 3 0 1 0 15 12A3 3 0 1 0 9 12`,
 // qrcode:`M2 2 11 2 11 11 2 11ZM14 2 23 2 23 9 14 9ZM2 14 11 14 11 20 2 20ZM15 14 23 14 23 21 15 21Z`,
 qrcode:`M2 2 8 2 8 8 2 8ZM16 2 22 2 22 8 16 8ZM2 16 8 16 8 22 2 22ZM12 12 22 12 22 22 12 22z`,
@@ -66,30 +97,124 @@ ws:`M2 7 4 6 4 16 12 20 18 17 10 13 10 10 12 11 12 12 22 17 12 22 2 17 2 7M6 5 8
 android:`M6 2 19 2 19 22 6 22ZM18 3 7 3 7 19 18 19ZM11 21 14 21C15 21 15 20 14 20L11 20C10 20 10 21 11 21M10 8C10 5 15 5 15 8ZM10 9 15 9 15 14 14 14 14 16C14 17 13 17 13 16L13 14 12 14 12 16C12 17 11 17 11 16L11 14 10 14ZM16 10C16 9 17 9 17 10L17 13C17 14 16 14 16 13ZM8 10C8 9 9 9 9 10L9 13C9 14 8 14 8 13Z`,
 kode:`M2 2 22 2 22 16 2 16ZM3 3 3 15 21 15 21 3ZM9 17 15 17C15 18 17 18 17 18L7 18C7 18 9 18 9 17ZM7 8 4 11 7 14 7 13 5 11 7 9ZM8 14 10 8 11 8 9 14ZM12 8 15 11 12 14 12 13 14 11 12 9ZM5 5C4 5 4 4 5 4L19 4C20 4 20 5 19 5ZM5 7C4 7 4 6 5 6L16 6C17 6 17 7 16 7L5 7`,
 design:`M2 2 22 2 22 16 2 16ZM3 3 3 15 21 15 21 3ZM9 17 15 17C15 18 17 18 17 18L7 18C7 18 9 18 9 17M5 5C4 5 4 4 5 4L11 4C12 4 12 5 11 5ZM5 7C4 7 4 6 5 6L12 6C13 6 13 7 12 7ZM5 9C4 9 4 8 5 8L12 8C13 8 13 9 12 9ZM17 4A1 1 0 0017 8 1 1 0 0017 4M4 14 8 10 10 12 11 11 14 14Z`,
-code:`M2 12 7 4 8 8 5 12 8 16 7 20 2 12M8 22 13 2 16 2 11 22ZM17 4 22 12 17 20 16 16 19 12 16 8Z`,
-buku:`
-M12 9 4 6C3 6 3 8 4 8L12 11 23 8 23 9 12 12 4 9C1 8 2 5 3 5L13 4 23 6Z`,
-jabat:`
-M2 4 9 3 6 6 8 8 11 6 16 11 12 13 10 13 4 8 2 8ZM22 4 22 8 20 8 15 9 11 5 8 7 7 6 11 2 20 4Z
-`,
-
 
 },
 
-icon:function(id='bayam'){
+html:function(){
+var {data}=svg.json;
+out=``;
+for (i in data) {
+var {mode,item,canvas}=data[i];
+out+=`${b[x].svg.js.diagram(canvas,item)}`;
+}
+return out;
+}, // end view icons
+
+js:{
+view:function(id='bayam'){
 var {path}=svg;
+log(path)
+out='';
+for(i in path){ log(i)
+out+=this.icon(this.path(i));
+}
+
+log(out)
+
+return out;
+},
+icon:function(id='bayam'){
+  var {path}=svg;
+  // ${path.gradien}
 return `<svg class="svgicon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24">
-<path id="path${id}" d="${path[id]}"  /></svg>`;
+ ${this.path(id)}</svg>`;
 },
 
-di:function(id='bayam'){
-var {path,icon}=svg;
+diagram:function(canvas='0 0 200 200',item){
+out=`<svg class="svgdiagram" xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="${canvas}">`;
+for (e in item) { node=item[e]; p=node.posisi; p=p.split(' ');
+
+if(node.nama=='text'){ out+=`<text x=${p[0]} y=${p[1]} >${node.text}</text>`;}
+
+else if(node.nama=='line'){
+out+=`<marker id='panah' refX='0' refY='2' markerWidth='4' markerHeight='4'orient='auto'><path d='M0 0 4 2 0 4Z' /></marker>
+<path d="${node.posisi}" marker-end='url(#panah)' />`; }
+
+else { out+=`<svg x=${p[0]} y=${p[1]} >${b[x].svg.js.path(node.nama)}</svg>`;}
+
+} // end for
+out+=`</svg>`;
+return out;
+},
+
+path:function(id='bayam'){
+var {path}=svg;
+return `<path id="path${id}" d="${path[id]}"  />`;
+},
+
+line:function(id='M0 0 L24 24'){
+return `<path d="${id}" />`;
+},
+
+
+list:function(){
+var {path}=svg;
 for(key in path ){
-list = document.getElementsByClassName("di-"+key);
+list = document.getElementsByClassName("bi-"+key);
+// alert(list)
 if(list.length > 0){
-for (var i=0 ; i<list.length; i++){ list[i].innerHTML = icon(key);}
+for (var i=0 ; i<list.length; i++){ list[i].innerHTML = svg.js.icon(key);}
 }
 }
+
+
+}, // end list
+
+
+icons:function(){
+var {data}=svg.json;
+function icon(id='house'){
+return `<svg id="svg${id}" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24"
+stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+fill="none" stroke="#fff"
+>
+<path id="path${id}" d="${data[id]}" />
+</svg>`;
+};
+
+for(key in data ){
+list = document.getElementsByClassName("bi-"+key);
+if(list.length > 0){
+for (var i=0 ; i<list.length; i++){ list[i].innerHTML = icon(key);
+}}}
+}, // end load icons
+
+
+
+
+gallery:function(id){
+var {path}=svg;
+
+out=``;
+  for(i in path){ var nod=path[i];
+out+=`<div class="col-1-4">`;
+out+=`<div onclick="img.controller.modal()" class="wow">`;
+// out+=this.simg(nod);
+out+=this.icon(this.path(i));
+
+out+=`</div>
+<span> ${i} </span>
+</div>`;
+}
+
+gebi(id).innerHTML=out;
+
 },
 
-};
+
+
+
+},// end js
+}; // end svg
+
+svg.js.list();
